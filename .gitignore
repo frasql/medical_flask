@@ -1,0 +1,20 @@
+#specific vscode
+.idea
+.vscode
+
+
+# Byte-compiled
+__pycache__/
+
+
+# Flask ignore
+instance/
+.webassets-cache
+
+
+# Environments
+.env
+venv/
+
+# secrets file
+secrets.py

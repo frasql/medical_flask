@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/doctors.css') }}">
+
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top has-shadow is-white" style="border-bottom: 1px solid #F22613">
+            <!-- logo / brand -->
+            <div class="navbar-brand">
+              <a class="navbar-item">
+              </a>
+              <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+            <div class="navbar-menu" id="nav-links">
+                <div class="navbar-start">
+                  <div>
+                    <a class="navbar-item subtitle" id="archivio_farmaci">Archivio Farmaci</a>
+                  </div>
+                  <div>
+                    <a class="navbar-item subtitle" href="/show_patients/" id="archive_patients">Archivio Pazienti</a>
+                  </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                      <a class="button is-link" id="signup">
+                        Sing Up
+                      </a>
+                      <a class="button is-primary" id="signin">
+                        Log In
+                      </a>
+                      <a class="button is-danger" id="logout">
+                        <strong>Logout</strong>
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- Sidebar -->    
+<section class="section sidebar">
+          
+  <aside class="column is-12 is-narrow-mobile is-fullheight section is-hidden-mobile">
+    <p class="menu-label is-hidden-touch">Navigation</p>
+    <ul class="menu-list">
+      <li>
+        <a href="#" class="">
+          <span class="icon"><i class="fa fa-home"></i></span> Home
+        </a>
+      </li>
+      <li>
+        <a href="#" class="is-active">
+          <span class="icon"><i class="fa fa-table"></i></span> Links
+        </a>
+
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon is-small"><i class="fa fa-link"></i></span> Link1
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon is-small"><i class="fa fa-link"></i></span> Link2
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" class="">
+          <span class="icon"><i class="fa fa-info"></i></span> About
+        </a>
+      </li>
+    </ul>
+  </aside>
+</section>
+
+
+<script src="{{ url_for('static', filename='js/doctors.js') }}"></script>
+
+
+
+
+</body>
+</html>

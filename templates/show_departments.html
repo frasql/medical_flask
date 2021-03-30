@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/departments.css')}}">
+
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top has-shadow is-white" style="border-bottom: 1px solid #F22613">
+            <!-- logo / brand -->
+            <div class="navbar-brand">
+              <a class="navbar-item">
+              </a>
+              <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+            <div class="navbar-menu" id="nav-links">
+                <div class="navbar-start">
+                  <div>
+                    <a class="navbar-item subtitle" id="archivio_farmaci">Archivio Farmaci</a>
+                  </div>
+                  <div>
+                    <a class="navbar-item subtitle" href="/show_patients/" id="archive_patients">Archivio Pazienti</a>
+                  </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                      <a class="button is-link" id="signup">
+                        Sing Up
+                      </a>
+                      <a class="button is-primary" id="signin">
+                        Log In
+                      </a>
+                      <a class="button is-danger" id="logout">
+                        <strong>Logout</strong>
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container is-fluid">
+            <div class="card-deck" id="department_cards">
+
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/departments.js') }}"></script>
+    
+</body>
+</html>

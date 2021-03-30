@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top has-shadow is-white" style="border-bottom: 1px solid #F22613">
+            <!-- logo / brand -->
+            <div class="navbar-brand">
+              <a class="navbar-item">
+              </a>
+              <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+            <div class="navbar-menu" id="nav-links">
+                <div class="navbar-start">
+                  <div>
+                    <a class="navbar-item subtitle" id="archivio_farmaci">Archivio Farmaci</a>
+                  </div>
+                  <div>
+                    <a class="navbar-item subtitle" href="/show_patients/" id="archive_patients">Archivio Pazienti</a>
+                  </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                      <a class="button is-link" id="signup">
+                        Sing Up
+                      </a>
+                      <a class="button is-primary" id="signin">
+                        Log In
+                      </a>
+                      <a class="button is-danger" id="logout">
+                        <strong>Logout</strong>
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="field">
+                <div class="control">FirstName
+                    <input type="text" class="input" >
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">LastName
+                    <input type="text" class="input" >
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">Date of Birth
+                    <input type="date" class="input" id="date_birth">
+                </div>
+            </div>
+            <div class="control">
+                <button class="button" type="submit" id="btn-add-patient">Invia</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Modal Sing Up -->
+
+<div class="modal" id="modal-signup">
+  <div class="modal-background" id="modal-background-signup"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Sing Up</p>
+      <button class="delete" id="close-signup" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content -->        
+        <div class="field">
+          <label class="label">FirstName</label>
+          <div class="control">
+             <input class="input" id="firstname" type="text" placeholder="Username...">
+          <!--
+          <div class="control has-icons-left has-icons-right">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+          <p class="help is-success">This username is available</p>
+          -->
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">LastName</label>
+          <div class="control">
+            <input class="input" id="lastname" type="text" placeholder="Lastname..." >
+          <!--
+          <div class="control has-icons-left has-icons-right">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <p class="help is-danger">This email is invalid</p>
+          -->
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+            <input class="input" id="username" type="text" placeholder="Username..." >
+          <!--
+          <div class="control has-icons-left has-icons-right">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <p class="help is-danger">This email is invalid</p>
+          -->
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" id="password" type="text" placeholder="Password..." >
+          <!--
+          <div class="control has-icons-left has-icons-right">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <p class="help is-danger">This email is invalid</p>
+          -->
+          </div>
+        </div>
+        <!--
+        <div class="field">
+          <label class="label">Subject</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        -->
+    <footer class="modal-card-foot">           
+      <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-yellow" id="register_user" >Invia</button>
+          </div>
+        </div>
+    </footer>
+  </section>
+  </div>
+</div>
+
+
+<!-- Modal Sing In -->
+<div class="modal" id="modal-signin">
+  <div class="modal-background" id="modal-background-signin"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Sing Up</p>
+      <button class="delete" id="close-signin" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content -->        
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+             <input class="input" id="login_username" type="text" placeholder="Username...">
+          <!--
+          <div class="control has-icons-left has-icons-right">
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </div>
+          <p class="help is-success">This username is available</p>
+          -->
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" id="login_password" type="text" placeholder="Password..." >
+          <!--
+          <div class="control has-icons-left has-icons-right">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-exclamation-triangle"></i>
+            </span>
+          </div>
+          <p class="help is-danger">This username is invalid</p>
+          -->
+          </div>
+        </div>
+        <!--
+        <div class="field">
+          <label class="label">Subject</label>
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        -->
+   <footer class="modal-card-foot">           
+      <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-yellow" id="login_user" type="submit">Invia</button>
+          </div>
+        </div>
+    </footer>
+  </section>
+  </div>
+</div>
+
+
+
+
+    <script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+    
+</body>
+</html>

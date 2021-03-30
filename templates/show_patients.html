@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar is-fixed-top has-shadow is-white" style="border-bottom: 1px solid #F22613">
+            <!-- logo / brand -->
+            <div class="navbar-brand">
+              <a class="navbar-item">
+              </a>
+              <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </div>
+            <div class="navbar-menu" id="nav-links">
+                <div class="navbar-start">
+                  <div>
+                    <a class="navbar-item subtitle" id="archivio_farmaci">Archivio Farmaci</a>
+                  </div>
+                  <div>
+                    <a class="navbar-item subtitle" id="archivio_pazienti">Archivio Pazienti</a>
+                  </div>
+                </div>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                      <a class="button is-link" id="signup">
+                        Sing Up
+                      </a>
+                      <a class="button is-primary" id="signin">
+                        Log In
+                      </a>
+                      <a class="button is-danger" id="logout">
+                        <strong>Logout</strong>
+                      </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- section show patients -->
+    <section class="section">
+        <div class="container is-fluid">
+          <button class="button" id="open_insert_modal">Add Patient</button>
+            <table class="table is-hoverable">
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Date of Birth</th>
+                        <th>Birth Place</th>
+                        <th>Tax Code</th>
+                        <th>Options</th>
+
+                    </tr>
+                </thead>
+                <tbody id="patient_row">
+                    <tr>
+                    </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+    
+<!-- Modal Insert Patient Materials-->
+<div class="modal" id="modal_insert_patient">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Inserisci Paziente</p>
+      <button class="delete close_insert_buttons" aria-label="close" id="close-material"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+        <div class="container" style="width: auto;">    
+                <div class="row">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                              <label for="codice_causale">FirstName<span class="required">*</span>:</label>
+                              <div class="control">
+                                <input class="input" type="text" id="firstname" />
+                              </div>
+                            </div>
+                            <div class="field">
+                                <label for="cliente">LastName<span class="required">*</span>:</label>
+                                <div class="control">
+                                <input class="input" type="text" id="lastname"  />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="descrizione">Date of Birth<span class="required">*</span>:</label>
+                                <div class="control">
+                                <input class="input" type="date" id="date_birth" />
+                                </div>  
+                            </div>
+                            <div class="field">
+                              <label for="descrizione">Birth Place<span class="required">*</span>:</label>
+                              <div class="control"> 
+                              <input class="input" type="text" id="birth_place" />
+                              </div>  
+                          </div>
+                          <div class="field">
+                            <label for="descrizione">Tax Code<span class="required">*</span>:</label>
+                            <div class="control">
+                            <input class="input" type="text" id="tax_code" />
+                            </div>  
+                          </div>                        
+                            <div class="control">
+                                <button class="button is-yellow is-rounded" type="submit" id="insert_patient">Invia</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+      <!-- End content -->
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+    <script src="{{ url_for('static', filename='js/patients.js') }}"></script>
+
+</body>
+</html>
